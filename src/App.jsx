@@ -40,7 +40,11 @@ function App() {
     <div className="container mt-4">
       <h1 className="mb-4">🎬 Movie Filter</h1>
 
-      <AddMovieForm genres={genres} onAddMovie={addMovie} />
+      <AddMovieForm
+        genres={genres}
+        existingMovies={movies}
+        onAddMovie={addMovie}
+      />
 
       <SearchBar
         searchTerm={searchTerm}
