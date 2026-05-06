@@ -1,4 +1,4 @@
-function GenreFilter({ selectedGenre, onChange }) {
+function GenreFilter({ selectedGenre, onChange, genres }) {
     return (
         <div className="mb-3">
             <label className="form-label">Filtra per genere</label>
@@ -8,10 +8,11 @@ function GenreFilter({ selectedGenre, onChange }) {
                 onChange={(e) => onChange(e.target.value)}
             >
                 <option value="">Tutti</option>
-                <option value="Fantascienza">Fantascienza</option>
-                <option value="Thriller">Thriller</option>
-                <option value="Romantico">Romantico</option>
-                <option value="Azione">Azione</option>
+                {genres.map((g, index) => (
+                    <option key={index} value={g}>
+                        {g}
+                    </option>
+                ))}
             </select>
         </div>
     );
